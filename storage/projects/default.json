@@ -1,0 +1,1255 @@
+{
+  "project": {
+    "id": "project-1",
+    "entityType": "project",
+    "title": "숨은 컷",
+    "genre": "미스터리 휴먼 스릴러",
+    "logline": "다큐멘터리 PD 차지유가 사라진 원본 편집본을 발견하며, 15년 전 보육원 화재와 현재 도시재개발 비리가 같은 진실을 향하고 있음을 추적한다.",
+    "tone": [
+      "현실적",
+      "정서 밀도 높음",
+      "조직 음모",
+      "가족 비밀"
+    ],
+    "format": "series",
+    "language": "ko",
+    "status": "draft",
+    "createdAt": "2026-05-02T05:40:23.880Z",
+    "updatedAt": "2026-05-02T05:40:23.909Z"
+  },
+  "characters": [
+    {
+      "id": "c1",
+      "entityType": "character",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "차지유",
+      "role": "다큐 PD / 주인공",
+      "org": "한강콘텐츠",
+      "avatar": "지유",
+      "desire": "버려진 사건을 자기 손으로 다시 편집해 진실을 드러내고 싶다.",
+      "wound": "어릴 때 구조받은 기억이 조작되었을지 모른다는 불안.",
+      "secret": "보육원 화재 생존자였지만 기록상 이름이 바뀌어 있다.",
+      "contradiction": "진실을 원하지만, 진실이 가족을 무너뜨릴까 두려워한다.",
+      "arc": [
+        "의심",
+        "집착",
+        "공포",
+        "결심",
+        "폭로",
+        "상실 후 선택"
+      ],
+      "tags": [
+        "주동 인물",
+        "숨겨진 과거",
+        "기록 집착"
+      ]
+    },
+    {
+      "id": "c2",
+      "entityType": "character",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "강무진",
+      "role": "강력계 형사",
+      "org": "서래경찰서",
+      "avatar": "무진",
+      "desire": "묻힌 실종 사건을 정식 사건으로 되살리고 싶다.",
+      "wound": "실종된 편집기사와 마지막 통화를 했지만 신고하지 않았다.",
+      "secret": "초기 수사 자료 일부를 몰래 보관하고 있다.",
+      "contradiction": "법 절차를 중시하지만, 이번 사건에서는 증거 은닉에 기대고 있다.",
+      "arc": [
+        "방어",
+        "동조",
+        "죄책",
+        "배신감",
+        "공조",
+        "책임"
+      ],
+      "tags": [
+        "수사 축",
+        "죄책감",
+        "비공식 공조"
+      ]
+    },
+    {
+      "id": "c3",
+      "entityType": "character",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "서이현",
+      "role": "도시재생청 기획관",
+      "org": "도시재생청",
+      "avatar": "이현",
+      "desire": "오래된 동네를 살리는 공공 프로젝트를 완성하고 싶다.",
+      "wound": "아버지가 개발 비리에 연루되어 가족 전체가 낙인찍혔다.",
+      "secret": "해림개발 내부 문건을 익명으로 지유에게 보냈다.",
+      "contradiction": "공익을 말하지만, 자기 이름을 지키기 위해 침묵한 적이 있다.",
+      "arc": [
+        "거리두기",
+        "협상",
+        "흔들림",
+        "동맹",
+        "폭로",
+        "자기 책임"
+      ],
+      "tags": [
+        "회색 동맹",
+        "정책 라인",
+        "내부 제보"
+      ]
+    },
+    {
+      "id": "c4",
+      "entityType": "character",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "권태오",
+      "role": "해림개발 대표",
+      "org": "해림개발",
+      "avatar": "태오",
+      "desire": "재개발 사업권과 과거 기록을 동시에 장악하려 한다.",
+      "wound": "가난한 출신을 지우기 위해 성공 서사를 과잉 구축했다.",
+      "secret": "보육원 화재 직후 사라진 후원금 흐름을 알고 있다.",
+      "contradiction": "가족을 지키기 위한 선택이었다고 믿지만, 실제로는 자기 권력 보존이다.",
+      "arc": [
+        "여유",
+        "경고",
+        "압박",
+        "통제",
+        "균열",
+        "추락"
+      ],
+      "tags": [
+        "주요 적대",
+        "자본 권력",
+        "은폐"
+      ]
+    },
+    {
+      "id": "c5",
+      "entityType": "character",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "오민서",
+      "role": "신입 작가",
+      "org": "한강콘텐츠",
+      "avatar": "민서",
+      "desire": "자기 이름이 들어간 첫 작품을 완성하고 싶다.",
+      "wound": "타인의 이야기를 훔친다는 죄책감 때문에 취재에 선을 긋는다.",
+      "secret": "화재 당시 구조 기록을 가진 간호사의 딸이다.",
+      "contradiction": "관찰자로 남고 싶지만, 계속 사건 내부자로 끌려 들어간다.",
+      "arc": [
+        "호기심",
+        "몰입",
+        "회피",
+        "고백",
+        "증언",
+        "작가로 성장"
+      ],
+      "tags": [
+        "관찰자",
+        "감정 기록",
+        "증언 연결"
+      ]
+    }
+  ],
+  "organizations": [
+    {
+      "id": "o1",
+      "entityType": "organization",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "한강콘텐츠",
+      "type": "제작사",
+      "agenda": "도시재개발 다큐를 준비하며 사건의 표면을 건드린다.",
+      "leverage": "원본 편집본, 취재 네트워크, 방송 편성권",
+      "risk": "투자 철회와 명예훼손 소송에 취약하다.",
+      "tags": [
+        "창작 조직",
+        "취재",
+        "내부 갈등"
+      ]
+    },
+    {
+      "id": "o2",
+      "entityType": "organization",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "서래경찰서",
+      "type": "수사기관",
+      "agenda": "공소시효가 지난 실종 사건을 비공식적으로 재검토한다.",
+      "leverage": "과거 수사 기록, 현장 접근권",
+      "risk": "초기 부실 수사가 드러나면 조직 책임으로 번진다.",
+      "tags": [
+        "수사",
+        "기록",
+        "책임 회피"
+      ]
+    },
+    {
+      "id": "o3",
+      "entityType": "organization",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "도시재생청",
+      "type": "공공기관",
+      "agenda": "서래동 재개발을 공익 사업으로 승인하려 한다.",
+      "leverage": "인허가, 주민 설명회, 공문 기록",
+      "risk": "해림개발과의 유착 의혹이 드러날 수 있다.",
+      "tags": [
+        "정책",
+        "공공성",
+        "정치 압력"
+      ]
+    },
+    {
+      "id": "o4",
+      "entityType": "organization",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "해림개발",
+      "type": "기업",
+      "agenda": "보육원 부지를 포함한 재개발 사업권을 확보하려 한다.",
+      "leverage": "자본, 로비, 법무팀, 언론 플레이",
+      "risk": "화재와 후원금 기록이 연결되면 치명적이다.",
+      "tags": [
+        "자본",
+        "은폐",
+        "압박"
+      ]
+    },
+    {
+      "id": "o5",
+      "entityType": "organization",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "name": "달빛보육원",
+      "type": "과거 기관",
+      "agenda": "현재는 폐쇄되었지만 모든 인물의 과거를 묶는 장소다.",
+      "leverage": "입소 기록, 후원자 명단, 구조자 명부",
+      "risk": "기록 조작 정황 때문에 누구의 기억도 안정적이지 않다.",
+      "tags": [
+        "과거",
+        "출생 기록",
+        "화재"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "달빛보육원 화재",
+      "date": "2011.11",
+      "phase": "과거",
+      "summary": "보육원 창고에서 시작된 화재로 아이 한 명이 실종되고 후원금 장부가 사라진다.",
+      "characters": [
+        "c1",
+        "c4"
+      ],
+      "organizations": [
+        "o5",
+        "o4"
+      ],
+      "emotion": "지유: 설명할 수 없는 공포, 태오: 기회로 변환",
+      "impact": 9,
+      "tags": [
+        "원점 사건",
+        "기록 소실",
+        "트라우마"
+      ]
+    },
+    {
+      "id": "e2",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "편집기사 윤도현 실종",
+      "date": "2016.04",
+      "phase": "과거",
+      "summary": "화재 다큐의 원본 편집본을 갖고 있던 윤도현이 마지막 통화 이후 사라진다.",
+      "characters": [
+        "c2"
+      ],
+      "organizations": [
+        "o2"
+      ],
+      "emotion": "무진: 신고하지 않은 죄책감이 방어적 태도로 굳어진다.",
+      "impact": 8,
+      "tags": [
+        "실종",
+        "수사 공백",
+        "죄책감"
+      ]
+    },
+    {
+      "id": "e3",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "원본 편집본 발견",
+      "date": "2026.02 / 1화",
+      "phase": "Act 1",
+      "summary": "지유가 폐창고 자료 더미에서 방영본과 다른 원본 편집본을 발견한다.",
+      "characters": [
+        "c1",
+        "c5"
+      ],
+      "organizations": [
+        "o1"
+      ],
+      "emotion": "지유: 직업적 흥분에서 사적인 공포로 급전환, 민서: 관찰자에서 공모자로 이동",
+      "impact": 7,
+      "tags": [
+        "촉발 사건",
+        "편집본",
+        "공조 시작"
+      ]
+    },
+    {
+      "id": "e4",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "주민 설명회 붕괴",
+      "date": "2026.03 / 3화",
+      "phase": "Act 1",
+      "summary": "재개발 설명회에서 조작된 보상 자료가 공개되고, 이현은 내부 문건의 존재를 눈치챈다.",
+      "characters": [
+        "c1",
+        "c3",
+        "c4"
+      ],
+      "organizations": [
+        "o3",
+        "o4"
+      ],
+      "emotion": "이현: 침묵이 더 큰 공범이 될 수 있다는 위기감",
+      "impact": 6,
+      "tags": [
+        "공개 충돌",
+        "정책 압박",
+        "제보 암시"
+      ]
+    },
+    {
+      "id": "e5",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "입소 기록의 다른 이름",
+      "date": "2026.04 / 5화",
+      "phase": "Act 2",
+      "summary": "달빛보육원 입소 명부에서 지유의 옛 이름이 발견되고, 가족 서사가 흔들린다.",
+      "characters": [
+        "c1",
+        "c5",
+        "c2"
+      ],
+      "organizations": [
+        "o5",
+        "o2"
+      ],
+      "emotion": "지유: 진실 추적이 자기 정체성 해체로 바뀐다.",
+      "impact": 10,
+      "tags": [
+        "중간 반전",
+        "정체성",
+        "기록 조작"
+      ]
+    },
+    {
+      "id": "e6",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "해림개발 법무팀 압박",
+      "date": "2026.05 / 7화",
+      "phase": "Act 2",
+      "summary": "권태오가 제작사 투자 라인을 끊고 지유 팀에 명예훼손 소송을 예고한다.",
+      "characters": [
+        "c1",
+        "c3",
+        "c4"
+      ],
+      "organizations": [
+        "o1",
+        "o4",
+        "o3"
+      ],
+      "emotion": "태오: 통제가 가능하다는 확신, 지유: 공포를 분노로 전환",
+      "impact": 7,
+      "tags": [
+        "압박",
+        "소송",
+        "동맹 강화"
+      ]
+    },
+    {
+      "id": "e7",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "무진의 은닉 자료 공개",
+      "date": "2026.06 / 9화",
+      "phase": "Act 3",
+      "summary": "무진이 과거 수사 자료를 공개하며 경찰 내부 책임과 자기 과오를 동시에 인정한다.",
+      "characters": [
+        "c1",
+        "c2"
+      ],
+      "organizations": [
+        "o2"
+      ],
+      "emotion": "무진: 속죄를 행동으로 전환, 지유: 불신에서 신뢰로 이동",
+      "impact": 8,
+      "tags": [
+        "고백",
+        "수사 재개",
+        "동맹 회복"
+      ]
+    },
+    {
+      "id": "e8",
+      "entityType": "event",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "최종 편집본 송출",
+      "date": "2026.07 / 12화",
+      "phase": "Act 3",
+      "summary": "원본 편집본, 입소 기록, 후원금 장부가 하나의 방송으로 연결되고 각 인물의 선택이 공개된다.",
+      "characters": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "organizations": [
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5"
+      ],
+      "emotion": "지유: 진실을 소유하지 않고 공개 기록으로 남기는 선택",
+      "impact": 10,
+      "tags": [
+        "클라이맥스",
+        "방송",
+        "기록 회복"
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "id": "ep1",
+      "entityType": "episode",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "1화. 방영되지 않은 컷",
+      "act": "Act 1",
+      "hook": "원본 편집본 발견",
+      "turn": "지유가 화면 속 아이가 자신일 수 있음을 본다.",
+      "payoff": "윤도현 실종 사건 암시",
+      "events": [
+        "e3"
+      ],
+      "characters": [
+        "c1",
+        "c5"
+      ]
+    },
+    {
+      "id": "ep3",
+      "entityType": "episode",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "3화. 설명회",
+      "act": "Act 1",
+      "hook": "주민 설명회 자료 조작",
+      "turn": "이현이 익명 제보자의 위치에 선다.",
+      "payoff": "해림개발과 도시재생청 연결",
+      "events": [
+        "e4"
+      ],
+      "characters": [
+        "c1",
+        "c3",
+        "c4"
+      ]
+    },
+    {
+      "id": "ep5",
+      "entityType": "episode",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "5화. 다른 이름",
+      "act": "Act 2",
+      "hook": "입소 명부 발견",
+      "turn": "지유가 취재 대상에서 사건 당사자로 바뀐다.",
+      "payoff": "보육원 화재 생존자 떡밥 회수",
+      "events": [
+        "e5"
+      ],
+      "characters": [
+        "c1",
+        "c2",
+        "c5"
+      ]
+    },
+    {
+      "id": "ep7",
+      "entityType": "episode",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "7화. 계약 해지",
+      "act": "Act 2",
+      "hook": "투자 철회와 소송 예고",
+      "turn": "팀 내부에서 방송 중단 의견이 나온다.",
+      "payoff": "이현의 내부 문건 공개 결심",
+      "events": [
+        "e6"
+      ],
+      "characters": [
+        "c1",
+        "c3",
+        "c4"
+      ]
+    },
+    {
+      "id": "ep9",
+      "entityType": "episode",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "9화. 보관함",
+      "act": "Act 3",
+      "hook": "무진의 은닉 자료",
+      "turn": "무진이 자기 책임을 공개적으로 인정한다.",
+      "payoff": "윤도현 마지막 동선 확정",
+      "events": [
+        "e7"
+      ],
+      "characters": [
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "id": "ep12",
+      "entityType": "episode",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "12화. 송출",
+      "act": "Act 3",
+      "hook": "방송 직전 압수수색",
+      "turn": "민서가 백업 편집본을 외부 서버로 넘긴다.",
+      "payoff": "기록 조작의 전모 공개",
+      "events": [
+        "e8"
+      ],
+      "characters": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "c1",
+      "to": "c2",
+      "type": "동맹",
+      "label": "비공식 공조",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "c1",
+      "to": "c4",
+      "type": "적대",
+      "label": "은폐 vs 폭로",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "c1",
+      "to": "c5",
+      "type": "멘토",
+      "label": "취재팀",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "c3",
+      "to": "c4",
+      "type": "압박",
+      "label": "인허가 압력",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "c3",
+      "to": "o3",
+      "type": "소속",
+      "label": "기획관",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "c4",
+      "to": "o4",
+      "type": "소유",
+      "label": "대표",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "o4",
+      "to": "o5",
+      "type": "비밀",
+      "label": "후원금 장부",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "o1",
+      "to": "e3",
+      "type": "사건",
+      "label": "발견",
+      "direction": "bidirectional",
+      "strength": 5
+    },
+    {
+      "id": "",
+      "entityType": "link",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "from": "o2",
+      "to": "e7",
+      "type": "사건",
+      "label": "자료 공개",
+      "direction": "bidirectional",
+      "strength": 5
+    }
+  ],
+  "issues": [
+    {
+      "id": "i1",
+      "entityType": "issue",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "권태오의 최종 선택 동기",
+      "summary": "12화에서 도주 대신 공개 대립을 택하는 이유가 더 필요하다.",
+      "target": "c4",
+      "type": "character",
+      "priority": "medium",
+      "resolved": false
+    },
+    {
+      "id": "i2",
+      "entityType": "issue",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "도시재생청 내부 라인",
+      "summary": "이현 외에 제보를 막으려는 상급자 캐릭터가 필요하다.",
+      "target": "o3",
+      "type": "organization",
+      "priority": "medium",
+      "resolved": false
+    },
+    {
+      "id": "i3",
+      "entityType": "issue",
+      "status": "active",
+      "createdAt": "2026-05-02T05:40:23.881Z",
+      "updatedAt": "2026-05-02T05:40:23.881Z",
+      "createdBy": "human",
+      "provenance": {
+        "source": "human",
+        "sourceText": "",
+        "sourceRange": null,
+        "importedAt": "2026-05-02T05:40:23.881Z"
+      },
+      "review": {
+        "state": "accepted",
+        "confidence": 1,
+        "reviewedBy": "",
+        "reviewedAt": ""
+      },
+      "notes": "",
+      "title": "6화 감정 전환 공백",
+      "summary": "지유가 무진을 다시 믿게 되는 작은 사건을 보강해야 한다.",
+      "target": "e6",
+      "type": "event",
+      "priority": "medium",
+      "resolved": false
+    }
+  ],
+  "suggestions": [],
+  "llmIntakes": [],
+  "operationLog": [],
+  "savedAt": "2026-05-02T05:40:23.909Z"
+}
