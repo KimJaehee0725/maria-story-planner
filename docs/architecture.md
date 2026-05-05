@@ -9,7 +9,7 @@
 - `src/main.tsx`: React 진입점이며 `styles.css`를 그대로 로드한다.
 - `src/App.tsx`: 전체 shell, 내비게이션, topbar, 오른쪽 detail rail, 하단 LLM drawer 배치를 조립한다.
 - `src/state/planner-state.tsx`: reducer, 클라이언트 상태, 서버 API 호출, 저장/로드/LLM apply action을 담당한다.
-- `src/components/views.tsx`: Dashboard, Timeline, Characters, Graph, Episodes, Organizations 화면 컴포넌트를 둔다.
+- `src/components/views/`: Dashboard, Timeline, Characters, Graph, Episodes, Organizations 화면 컴포넌트를 둔다.
 - `src/components/DetailRail.tsx`: 선택 항목 상세 편집, 저장 bar, 휴지통/복구 UI를 둔다.
 - `src/components/editors.tsx`: input, textarea, select, range, relation checklist 같은 편집 컨트롤을 둔다.
 - `src/llm/LlmDrawer.tsx`: assistant-ui runtime, composer, operation card, apply/ignore UI를 둔다.

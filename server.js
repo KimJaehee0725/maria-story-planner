@@ -1015,6 +1015,72 @@ async function callOpenAiCompatibleChat(messages) {
   };
 }
 
+async function createAndSaveLlmDraftTurn({
+  promptMessages,
+  projectData,
+  sourceText,
+  createdAt,
+  turnId,
+  validationProvenance = null,
+  fallbackAssistantMessage,
+  buildChatTurn,
+}) {
+  const providerResponse = await callOpenAiCompatibleChat(promptMessages);
+  let parsedJson;
+  try {
+    parsedJson = parseJsonObjectFromText(providerResponse.content);
+  } catch (error) {
+    throw new HttpError(502, "LLM_BAD_JSON", "LLM 응답을 JSON으로 해석하지 못했습니다.", {
+      parseMessage: error.message,
+    });
+  }
+
+  let parsedResponse;
+  let operations;
+  try {
+    parsedResponse = parseLlmChatResponseWire(parsedJson);
+    operations = validateLlmOperations(parsedResponse.operations, {
+      projectData,
+      sourceText,
+      createdAt,
+      turnId,
+      provenance: validationProvenance,
+    });
+  } catch (error) {
+    throw new HttpError(502, "LLM_BAD_OPERATION", "LLM이 검증할 수 없는 operation을 반환했습니다.", {
+      validationMessage: error.message,
+    });
+  }
+
+  const assistantMessage =
+    typeof parsedResponse.assistantMessage === "string" && parsedResponse.assistantMessage.trim()
+      ? parsedResponse.assistantMessage.trim()
+      : fallbackAssistantMessage;
+  const config = llmConfig();
+  const chatTurn = buildChatTurn({
+    assistantMessage,
+    operations,
+    providerResponse,
+    config,
+  });
+
+  const saved = await queueWrite(async () => {
+    const current = await readProjectData({ allowEmpty: true });
+    current.llmIntakes.push(chatTurn);
+    return saveProjectData(current, { currentRevision: current.revision });
+  });
+  await appendJsonLine(LLM_INTAKE_FILE, chatTurn);
+
+  return {
+    chatTurn,
+    assistantMessage,
+    operations,
+    saved,
+    providerResponse,
+    parsedResponse,
+  };
+}
+
 function collectionFromOperationPayload(payload = {}) {
   const collection = payload.collection || ENTITY_TO_COLLECTION[payload.entityType] || payload.entityType;
   return collectionFromPathPart(collection);
@@ -1505,73 +1571,45 @@ async function handleLlmChatApi(req, res) {
     projectData,
   });
 
-  const providerResponse = await callOpenAiCompatibleChat(promptMessages);
-  let parsedJson;
-  try {
-    parsedJson = parseJsonObjectFromText(providerResponse.content);
-  } catch (error) {
-    throw new HttpError(502, "LLM_BAD_JSON", "LLM 응답을 JSON으로 해석하지 못했습니다.", {
-      parseMessage: error.message,
-    });
-  }
-
   const createdAt = nowIso();
   const turnId = payload.id || `chat-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-  let parsed;
-  let operations;
-  try {
-    parsed = parseLlmChatResponseWire(parsedJson);
-    operations = validateLlmOperations(parsed.operations, {
-      projectData,
-      sourceText: message,
-      createdAt,
-      turnId,
-    });
-  } catch (error) {
-    throw new HttpError(502, "LLM_BAD_OPERATION", "LLM이 검증할 수 없는 operation을 반환했습니다.", {
-      validationMessage: error.message,
-    });
-  }
-
-  const assistantMessage =
-    typeof parsed.assistantMessage === "string" && parsed.assistantMessage.trim()
-      ? parsed.assistantMessage.trim()
-      : "검토 가능한 변경 제안을 만들었습니다.";
-  const config = llmConfig();
-  const chatTurn = {
-    id: turnId,
-    userMessage: message,
-    assistantMessage,
-    scope,
-    selectedType,
-    selectedId,
-    operations,
-    status: "drafted",
+  const { chatTurn, assistantMessage, operations, saved } = await createAndSaveLlmDraftTurn({
+    promptMessages,
+    projectData,
+    sourceText: message,
     createdAt,
-    provider: {
-      type: "openai_compatible",
-      baseUrl: config.baseUrl,
-      model: providerResponse.model || config.model,
+    turnId,
+    fallbackAssistantMessage: "검토 가능한 변경 제안을 만들었습니다.",
+    buildChatTurn({ assistantMessage, operations, providerResponse, config }) {
+      return {
+        id: turnId,
+        userMessage: message,
+        assistantMessage,
+        scope,
+        selectedType,
+        selectedId,
+        operations,
+        status: "drafted",
+        createdAt,
+        provider: {
+          type: "openai_compatible",
+          baseUrl: config.baseUrl,
+          model: providerResponse.model || config.model,
+        },
+        provenance: {
+          source: "llm_chat",
+          sourceText: message,
+          importedAt: createdAt,
+          prompt: {
+            system: promptMessages[0].content,
+            user: promptMessages[1].content,
+          },
+          rawAssistantContent: providerResponse.content,
+          usage: providerResponse.usage,
+        },
+      };
     },
-    provenance: {
-      source: "llm_chat",
-      sourceText: message,
-      importedAt: createdAt,
-      prompt: {
-        system: promptMessages[0].content,
-        user: promptMessages[1].content,
-      },
-      rawAssistantContent: providerResponse.content,
-      usage: providerResponse.usage,
-    },
-  };
-
-  const saved = await queueWrite(async () => {
-    const current = await readProjectData({ allowEmpty: true });
-    current.llmIntakes.push(chatTurn);
-    return saveProjectData(current, { currentRevision: current.revision });
   });
-  await appendJsonLine(LLM_INTAKE_FILE, chatTurn);
 
   sendJson(res, 201, {
     ok: true,
@@ -1684,89 +1722,61 @@ async function handleDocumentImportsApi(req, res, parts) {
     });
     importJob.truncated = prompt.truncated;
 
-    const providerResponse = await callOpenAiCompatibleChat(prompt.messages);
-    let parsedJson;
-    try {
-      parsedJson = parseJsonObjectFromText(providerResponse.content);
-    } catch (error) {
-      throw new HttpError(502, "LLM_BAD_JSON", "LLM 응답을 JSON으로 해석하지 못했습니다.", {
-        parseMessage: error.message,
-      });
-    }
-
     const turnCreatedAt = nowIso();
     const turnId = `doc-${jobId}`;
     const sourceText = documentImportSourceText(importJob);
     const operationProvenance = documentImportOperationProvenance(importJob, turnCreatedAt, turnId);
-    let parsedResponse;
-    let operations;
-    try {
-      parsedResponse = parseLlmChatResponseWire(parsedJson);
-      operations = validateLlmOperations(parsedResponse.operations, {
-        projectData,
-        sourceText,
-        createdAt: turnCreatedAt,
-        turnId,
-        provenance: operationProvenance,
-      });
-    } catch (error) {
-      throw new HttpError(502, "LLM_BAD_OPERATION", "LLM이 검증할 수 없는 operation을 반환했습니다.", {
-        validationMessage: error.message,
-      });
-    }
-
-    const assistantMessage =
-      typeof parsedResponse.assistantMessage === "string" && parsedResponse.assistantMessage.trim()
-        ? parsedResponse.assistantMessage.trim()
-        : "문서에서 검토 가능한 변경 제안을 만들었습니다.";
-    const config = llmConfig();
-    const chatTurn = {
-      id: turnId,
-      userMessage: sourceText || "문서 가져오기",
-      assistantMessage,
-      scope: importJob.scope,
-      selectedType: importJob.selectedType,
-      selectedId: importJob.selectedId,
-      operations,
-      status: "drafted",
+    const { chatTurn, assistantMessage, operations, saved } = await createAndSaveLlmDraftTurn({
+      promptMessages: prompt.messages,
+      projectData,
+      sourceText,
       createdAt: turnCreatedAt,
-      provider: {
-        type: "openai_compatible",
-        baseUrl: config.baseUrl,
-        model: providerResponse.model || config.model,
+      turnId,
+      validationProvenance: operationProvenance,
+      fallbackAssistantMessage: "문서에서 검토 가능한 변경 제안을 만들었습니다.",
+      buildChatTurn({ assistantMessage, operations, providerResponse, config }) {
+        return {
+          id: turnId,
+          userMessage: sourceText || "문서 가져오기",
+          assistantMessage,
+          scope: importJob.scope,
+          selectedType: importJob.selectedType,
+          selectedId: importJob.selectedId,
+          operations,
+          status: "drafted",
+          createdAt: turnCreatedAt,
+          provider: {
+            type: "openai_compatible",
+            baseUrl: config.baseUrl,
+            model: providerResponse.model || config.model,
+          },
+          provenance: {
+            source: "document_import",
+            sourceText,
+            sourceRange: null,
+            importedAt: turnCreatedAt,
+            importJobId: jobId,
+            files: importJob.files.map(publicImportFile),
+            originalsPath: importJob.paths.originals,
+            manifestPath: importJob.paths.manifest,
+            extractedTextPath: importJob.paths.manifest,
+            truncated: prompt.truncated,
+            prompt: {
+              system: prompt.messages[0].content,
+              user: prompt.messages[1].content,
+            },
+            promptDocuments: prompt.promptDocuments.map((document) => ({
+              filename: document.filename,
+              textLength: document.textLength,
+              promptTextLength: document.text.length,
+              truncated: document.truncated,
+            })),
+            rawAssistantContent: providerResponse.content,
+            usage: providerResponse.usage,
+          },
+        };
       },
-      provenance: {
-        source: "document_import",
-        sourceText,
-        sourceRange: null,
-        importedAt: turnCreatedAt,
-        importJobId: jobId,
-        files: importJob.files.map(publicImportFile),
-        originalsPath: importJob.paths.originals,
-        manifestPath: importJob.paths.manifest,
-        extractedTextPath: importJob.paths.manifest,
-        truncated: prompt.truncated,
-        prompt: {
-          system: prompt.messages[0].content,
-          user: prompt.messages[1].content,
-        },
-        promptDocuments: prompt.promptDocuments.map((document) => ({
-          filename: document.filename,
-          textLength: document.textLength,
-          promptTextLength: document.text.length,
-          truncated: document.truncated,
-        })),
-        rawAssistantContent: providerResponse.content,
-        usage: providerResponse.usage,
-      },
-    };
-
-    const saved = await queueWrite(async () => {
-      const current = await readProjectData({ allowEmpty: true });
-      current.llmIntakes.push(chatTurn);
-      return saveProjectData(current, { currentRevision: current.revision });
     });
-    await appendJsonLine(LLM_INTAKE_FILE, chatTurn);
 
     importJob = {
       ...importJob,

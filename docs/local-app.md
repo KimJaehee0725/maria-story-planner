@@ -8,7 +8,7 @@ Finder에서 repo 폴더의 `Install Maria Story Planner.command`를 더블클�
 
 설치기는 다음 작업을 수행한다.
 
-- Node.js 20.6 이상 확인
+- Node.js 20 이상 확인
 - Node.js가 없거나 너무 오래되었으면 Homebrew 또는 nodejs.org 공식 `.pkg`로 설치 시도
 - `~/Applications/Maria Story Planner`에 설치본 생성
 - `.env` 복사

@@ -10,7 +10,7 @@
 
 ### macOS 앱처럼 설치
 
-터미널을 잘 모르는 사용자는 repo 폴더의 `Install Maria Story Planner.command`를 더블클릭하면 됩니다. 설치기는 Node.js를 확인하고, 필요하면 설치를 시도한 뒤 `~/Applications/Maria Story Planner`에 설치본을 만들고 Desktop 바로가기를 생성합니다.
+터미널을 잘 모르는 사용자는 repo 폴더의 `Install Maria Story Planner.command`를 더블클릭하면 됩니다. 설치기는 Node.js를 확인하고, 필요하면 설치를 시도한 뒤 `~/Applications/Maria Story Planner`에 설치본을 만들고 Desktop 바로가기를 생성합니다. `.env`는 설치본에 복사되지만 Git에는 포함하지 않습니다.
 
 자세한 내용은 [docs/local-app.md](docs/local-app.md)를 참고하세요.
 
@@ -372,7 +372,7 @@ Girlfriend's Browser
 1. `data-model.js`에서 스키마 정의
 2. `src/types.ts`에 TypeScript 타입 추가
 3. `scripts/model-contract-test.js`에 테스트 추가
-4. `src/components/views.tsx`에 view 컴포넌트 추가
+4. `src/components/views/`에 view 컴포넌트 추가
 5. `src/components/editors.tsx`에 editor 추가
 
 ### 새 LLM Operation 추가

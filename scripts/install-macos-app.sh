@@ -24,8 +24,8 @@ PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 node_version_ok() {
   command -v node >/dev/null 2>&1 || return 1
   node -e '
-    const [major, minor] = process.versions.node.split(".").map(Number);
-    process.exit(major > 20 || (major === 20 && minor >= 6) ? 0 : 1);
+    const [major] = process.versions.node.split(".").map(Number);
+    process.exit(major >= 20 ? 0 : 1);
   ' >/dev/null 2>&1
 }
 
@@ -61,7 +61,7 @@ ensure_node() {
     return
   fi
 
-  info "Node.js 20.6 이상이 필요합니다. 설치를 시도합니다."
+  info "Node.js 20 이상이 필요합니다. 설치를 시도합니다."
 
   if command -v brew >/dev/null 2>&1; then
     info "Homebrew로 Node.js를 설치/업데이트합니다..."
@@ -73,7 +73,7 @@ ensure_node() {
   hash -r
   export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
-  node_version_ok || fail "Node.js 설치 후에도 20.6 이상을 확인하지 못했습니다. 터미널을 다시 열고 설치기를 다시 실행하세요."
+  node_version_ok || fail "Node.js 설치 후에도 20 이상을 확인하지 못했습니다. 터미널을 다시 열고 설치기를 다시 실행하세요."
   command -v npm >/dev/null 2>&1 || fail "npm을 찾지 못했습니다. Node.js 설치 상태를 확인하세요."
   info "Node.js 설치 확인 완료: $(node -v)"
 }
