@@ -23,3 +23,6 @@ storage/projects/*.corrupt-*
 # Docker
 .docker/
 docker-compose.override.yml
+
+# Local app bundle
+Maria Story Planner.app/

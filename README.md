@@ -8,6 +8,12 @@
 
 ## 🚀 빠른 시작
 
+### macOS 앱처럼 설치
+
+터미널을 잘 모르는 사용자는 repo 폴더의 `Install Maria Story Planner.command`를 더블클릭하면 됩니다. 설치기는 Node.js를 확인하고, 필요하면 설치를 시도한 뒤 `~/Applications/Maria Story Planner`에 설치본을 만들고 Desktop 바로가기를 생성합니다.
+
+자세한 내용은 [docs/local-app.md](docs/local-app.md)를 참고하세요.
+
 ### 개발 환경
 
 **두 개의 터미널을 열고 각각 실행하세요:**
